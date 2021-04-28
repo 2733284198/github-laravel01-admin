@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -129,5 +130,23 @@ class HomeController extends Controller
         });
 //        pd($user1);
         pd($users);
+    }
+
+    public function news()
+    {
+//        $users = DB::table('news')
+//            ->get();
+//        pd($users);
+
+//        $news = \App\Models\News::All();
+//        $news = \App\Models\News::where('id', '>', 1)
+//            ->get();
+
+        $news = \App\Models\News::find(1)->toArray();
+        pd($news);
+
+//        $news = \App\Models\News::find(1);
+//        pd((string)$news);
+
     }
 }

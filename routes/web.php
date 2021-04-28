@@ -34,3 +34,6 @@ Route::get('/home/dbtest2', [HomeController::class, 'dbtest2']);
 Route::get('/home/dbtest3', [HomeController::class, 'dbtest3']);
 // 集合
 Route::get('/home/coll', [HomeController::class, 'coll']);
+
+// 新闻news
+Route::get('/home/news', [HomeController::class, 'news']);
