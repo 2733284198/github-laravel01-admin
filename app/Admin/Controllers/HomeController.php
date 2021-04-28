@@ -12,10 +12,24 @@ class HomeController extends Controller
 {
     public function index(Content $content)
     {
+        // 添加面包屑导航
+        /*$content->breadcrumb(
+            ['text' => '首页', 'url' => '/admin'],
+            ['text' => '用户管理', 'url' => '/admin/users'],
+            ['text' => '编辑用户']
+        );*/
+
+        // 填充页面body部分，这里可以填入任何可被渲染的对象
+        $content->body('hello world');
+
+        // 直接渲染视图输出
+        $content->view('test1', ['data' => 'foo']);
+
+        /* 原始内容 */
         return $content
-            ->title('Dashboard')
+            ->title('Dashboard-标题1')
             ->description('Description...')
-            ->row(Dashboard::title())
+            ->row(Dashboard::title().'-t1')
             ->row(function (Row $row) {
 
                 $row->column(4, function (Column $column) {

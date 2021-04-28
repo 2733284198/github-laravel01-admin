@@ -4,6 +4,7 @@ use Illuminate\Routing\Router;
 use App\Http\Controllers\HomeController;
 use App\Admin\Controllers\UsersController;
 use App\Admin\Controllers\NewsController;
+use App\Admin\Controllers\ProductController;
 
 Admin::routes();
 
@@ -24,4 +25,7 @@ Route::group([
 //    $router->resource(‘/brand’, ‘BrandController’);
     //    $router->resource('news', NewsController::class);
 
+//    $router->get('/product', 'ProductController');
+    $router->resource('/product', 'ProductController');
+//    $router->get('/product1', 'ProductController@index')->name('product');
 });
