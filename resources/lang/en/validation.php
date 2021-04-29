@@ -84,11 +84,18 @@ return [
     ],
     'mimes' => 'The :attribute must be a file of type: :values.',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
-    'min' => [
+    /*'min' => [
         'numeric' => 'The :attribute must be at least :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
         'string' => 'The :attribute must be at least :min characters.',
         'array' => 'The :attribute must have at least :min items.',
+    ],*/
+    'min' => [
+        'numeric' => '属性至少 :min.',
+        'file' => '属性至少 :min kilobytes.',
+//        'string' => 'The :attribute must be at least :min characters.',
+        'string' => '属性至少 :min 字符.',
+        'array' => '属性至少 :min .',
     ],
     'multiple_of' => 'The :attribute must be a multiple of :value.',
     'not_in' => 'The selected :attribute is invalid.',

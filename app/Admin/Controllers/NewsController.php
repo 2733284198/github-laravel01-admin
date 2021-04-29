@@ -28,7 +28,8 @@ class NewsController extends AdminController
 
         $table->column('id', __('Id'));
 
-        $table->column('title', __('Title'));
+//        $table->column('title', __('Title'));
+        $table->column('title', __('title'));
         $table->column('content', __('Content'));
 
         $table->column('status')->using([
@@ -81,8 +82,8 @@ class NewsController extends AdminController
         $show->field('id', __('Id'));
         $show->divider();
 
-        $show->field('title', __('Title'))->badge();
-        $show->field('content', __('Content'));
+        $show->field('title', __('title'))->badge();
+        $show->field('content', __('content'));
 //        $show->field('status', __('status'));
 
         return $show;
@@ -97,7 +98,7 @@ class NewsController extends AdminController
     {
         $form = new Form(new News());
 
-        $form->text('title', __('Title'))->rules('required|min:3');
+        $form->text('title', __('title'))->rules('required|min:3');
 //            ->creationRules(['required', "unique:users"]); // 唯一
 
         $form->text('content', __('Content'))->rules('required|min:3');
