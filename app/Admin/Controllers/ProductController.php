@@ -232,6 +232,30 @@ class ProductController extends AdminController
 //            2 => '2未通过',
 //        ]);
 
+        /* 快捷搜索 */
+        /*$table->quickSearch(function ($model, $query) {
+            $model->where('title', $query)->orWhere('content', 'like', "%{$query}%");
+//            $model->whereIn('status', [0, 1, 2]);
+        });*/
+
+        /* 筛选 */
+        $table->selector(function (Table\Tools\Selector $selector) {
+//            $selector->selectOne('gender', '性别', [
+            $selector->select('gender', '性别', [
+                '' => '0未知',
+                'm' => '1女性',
+                'f' => '2男性',
+            ]);
+
+
+
+            /*$selector->selectOne('gender', '性别', [
+                0 => '0未知',
+                1 => '1通过',
+                2 => '2未通过',
+            ]);*/
+        });
+
         $table->modalForm();
 
 
