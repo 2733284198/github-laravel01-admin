@@ -23,6 +23,8 @@ class CreateItemsTable extends Migration
             $table->decimal("money2",10,4);
             $table->timestamps();
 
+            $table->index('name');
+
             $table->engine = 'InnoDB';
 
         });
