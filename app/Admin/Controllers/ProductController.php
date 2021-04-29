@@ -14,6 +14,7 @@ use Encore\Admin\Show;
 use Encore\Admin\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Encore\Admin\Widgets\InfoBox;
 
 //class ProductController extends Controller
 class ProductController extends AdminController
@@ -82,9 +83,21 @@ class ProductController extends AdminController
 
             $gender = $query->select(DB::raw('count, gender'))->get()->pluck('count', 'gender')->toArray();
 
-            $doughnut = view('admin.chart.gender', compact('gender'));
+//            $doughnut = view('admin.chart.gender', compact('gender'));
 
-            return new Box('性别比例', $doughnut);
+            $doughnut = view('admin.chart.test', compact('gender'));
+//            return new Box('性别比例', $doughnut);
+//            return new Card('性别比例', $doughnut);
+//            return new InfoBox('性别比例', $doughnut);
+
+            $infoCard = new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024');
+            echo $infoCard->render();
+
+//            return $infoCard->render();
+
+//            return $content
+//                ->header('Chartjs')
+//                ->body(new Box('Bar chart', view('admin.chartjs')));
         });
 
         $table->footer(function ($query) {

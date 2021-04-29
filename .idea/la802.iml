@@ -124,6 +124,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/wulfheart/pretty_routes" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/andreaselia/laravel-api-to-postman" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/haruncpi/laravel-log-reader" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/chartjs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

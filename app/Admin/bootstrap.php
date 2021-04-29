@@ -18,3 +18,32 @@
  *
  */
 
+/* 表格初始化 */
+
+use Encore\Admin\Table;
+
+/*
+Table::init(function (Table $table) {
+
+    $table->disableActions();
+
+    $table->disablePagination();
+
+    $table->disableCreateButton();
+
+    $table->disableFilter();
+
+    $table->disableRowSelector();
+
+    $table->disableColumnSelector();
+
+    $table->disableTools();
+
+    $table->disableExport();
+
+    $table->actions(function (Table\Displayers\Actions $actions) {
+        $actions->disableView();
+        $actions->disableEdit();
+        $actions->disableDelete();
+    });
+});*/
