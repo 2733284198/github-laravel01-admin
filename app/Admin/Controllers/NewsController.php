@@ -81,7 +81,7 @@ class NewsController extends AdminController
         $show->field('id', __('Id'));
         $show->divider();
 
-        $show->field('title', __('Title'));
+        $show->field('title', __('Title'))->badge();
         $show->field('content', __('Content'));
 //        $show->field('status', __('status'));
 
@@ -97,13 +97,20 @@ class NewsController extends AdminController
     {
         $form = new Form(new News());
 
-        $form->text('title', __('Title'));
-        $form->text('content', __('Content'));
+        $form->text('title', __('Title'))->rules('required|min:3');
+//            ->creationRules(['required', "unique:users"]); // 唯一
+
+        $form->text('content', __('Content'))->rules('required|min:3');
 
 //        $form->text('status', __('status'));
         $form->select('status', __('status'))->options([0 => '0未知', 1 => '1通过', '2' => '2未通过']);
 
+       /* $form->saving(function (Form $form) {
+//            dump($form->title);
+//            echo '====>回调';
+        });*/
 
         return $form;
     }
+
 }
