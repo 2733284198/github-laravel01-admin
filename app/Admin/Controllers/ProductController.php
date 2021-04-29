@@ -66,6 +66,21 @@ class ProductController extends AdminController
     {
         $table = new Table(new News());
 
+        /* 头部 */
+        $table->header(function ($query) {
+            echo '<hr>';
+            echo '--header--';
+            echo '<hr>';
+            return 'header';
+        });
+
+        $table->footer(function ($query) {
+            echo '<hr>';
+            echo '--footer--';
+            echo '<hr>';
+            return 'footer';
+        });
+
 //        $table->column('id', __('Id'));
         $table->column('id', __('Id'))->sortable();
 //        $table->column('title', __('Title'));
@@ -175,6 +190,13 @@ class ProductController extends AdminController
 
         });
 
+        // 去掉批量操作
+        $table->batchActions(function ($batch) {
+            $batch->disableDelete();
+        });
+
+//        $table->disableBatchActions();
+
 
         /* 列过滤器 */
         $table->column('title')->filter('like');
@@ -215,6 +237,15 @@ class ProductController extends AdminController
 
         $form->text('title', __('Title'));
         $form->text('content', __('Content'));
+
+//        $type = [
+//            1 => '广告',
+//            2 => '违法',
+//            3 => '钓鱼',
+//        ];
+//
+//        $this->checkbox('type', '类型')->options($type);
+//        $this->textarea('reason', '原因')->rules('required');
 
         return $form;
     }
