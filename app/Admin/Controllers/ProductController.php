@@ -121,6 +121,7 @@ class ProductController extends AdminController
 
 //        $table->column('title')->link('http://www.163.com');
         $table->column('title');
+        $table->column('count');
 
 //        $table->column('title')->loading(['t1', 't2', 't3']);
 //        $table->column('title')->table(['key' => 'k1', 'val' => 'v1']);
@@ -248,6 +249,17 @@ class ProductController extends AdminController
             ]);
 
 
+            // todo 错误：范围不行
+            /*$selector->select('count', '数量', ['0-5', '6-10', '11-20'], function ($query, $value) {
+                $between = [
+                    [0, 5],
+                    [6, 10],
+                    [11, 20],
+                ];
+
+                $query->whereBetween('count', $between[$value]);
+            });*/
+
 
             /*$selector->selectOne('gender', '性别', [
                 0 => '0未知',
@@ -255,6 +267,21 @@ class ProductController extends AdminController
                 2 => '2未通过',
             ]);*/
         });
+
+        /* 快捷创建 */
+        $table->quickCreate(function (Table\Tools\QuickCreate $create) {
+            $create->text('title', '标题');
+            $create->email('content', '内容');
+            $create->select('status', '状态')->options([
+                0 => '0未知',
+                1 => '1通过',
+                2 => '2未通过',
+            ]);
+
+        });
+
+        /* 快捷键 */
+        $table->enableHotKeys();
 
         $table->modalForm();
 
