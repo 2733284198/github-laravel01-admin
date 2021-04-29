@@ -13,6 +13,7 @@ use Encore\Admin\Layout\Row;
 use Encore\Admin\Show;
 use Encore\Admin\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 //class ProductController extends Controller
 class ProductController extends AdminController
@@ -67,11 +68,23 @@ class ProductController extends AdminController
         $table = new Table(new News());
 
         /* 头部 */
-        $table->header(function ($query) {
+
+        /*$table->header(function ($query) {
             echo '<hr>';
             echo '--header--';
             echo '<hr>';
             return 'header';
+        });*/
+
+        $table->header(function ($query) {
+//            $gender = $query->select(DB::raw('count(gender) as count, gender'))
+//                ->groupBy('gender')->get()->pluck('count', 'gender')->toArray();
+
+            $gender = $query->select(DB::raw('count, gender'))->get()->pluck('count', 'gender')->toArray();
+
+            $doughnut = view('admin.chart.gender', compact('gender'));
+
+            return new Box('性别比例', $doughnut);
         });
 
         $table->footer(function ($query) {
