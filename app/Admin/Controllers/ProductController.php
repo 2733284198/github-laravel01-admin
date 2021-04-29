@@ -75,6 +75,29 @@ class ProductController extends AdminController
 //        $table->column('title')->width(50);
 //        $table->column('title')->help('这一列是...');
         $table->column('title')->color('#a0a0a0')->sortable();
+//        $table->column('title')->label('info');
+//        $table->column('title')->label('success');
+
+//        $table->column('title')->link('http://www.163.com');
+        $table->column('title');
+
+//        $table->column('title')->loading(['t1', 't2', 't3']);
+//        $table->column('title')->table(['key' => 'k1', 'val' => 'v1']);
+
+        // 时间
+        $table->column('create_at')->date('Y-m-d');
+
+        $table->column('status')->using([
+            0 => '0未知',
+            1 => '1通过',
+            2 => '2未通过',
+        ]);
+
+//        $table->column('status')->display(function () {
+//            return $this->status;
+//        });
+
+//        $table->column('create_at')->year();
 
 
 //        $table->column('content', __('Content'));
@@ -124,6 +147,42 @@ class ProductController extends AdminController
         // 隐藏列
 //        $table->hideColumns('name', 'title', 'desc');
 //        $table->hideColumns('title', 'desc');
+
+        /* 过滤 */
+        $table->filter(function($filter) {
+            // 去掉默认的id过滤器
+//            $filter->disableIdFilter();
+            // 展开
+            $filter->expand();
+            // 在这里添加字段过滤器
+            $filter->like('title', 'title');
+            $filter->like('content', 'content');
+            $filter->like('create_at', 'Created Time')->date();
+            /* 列过滤器 */
+            $filter->equal('status')->radio([
+                0 => '0未知',
+                1 => '1通过',
+                2 => '2未通过',
+            ]);
+
+
+        });
+
+        $table->actions(function ($actions) {
+
+            // 双击列表页的某一行，跳转进入编辑页面，删除和查看操作对应`delete`、`view`
+            $actions->dblclick('edit');
+
+        });
+
+
+        /* 列过滤器 */
+        $table->column('title')->filter('like');
+//        $table->column('status', '状态')->filter([
+//            0 => '0未知',
+//            1 => '1通过',
+//            2 => '2未通过',
+//        ]);
 
         $table->modalForm();
 
