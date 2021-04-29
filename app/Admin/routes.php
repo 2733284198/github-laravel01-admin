@@ -31,5 +31,10 @@ Route::group([
 
 //    $router->get('/product', 'ProductController');
     $router->resource('/product', 'ProductController');
+
+    $router->get('/chart1', 'ProductController@index')->name('chart1');
+    $router->get('/chart2', 'ProductController@chart2')->name('chart2');
+    $router->get('/vue1', 'ProductController@vue1')->name('vue1');
+
 //    $router->get('/product1', 'ProductController@index')->name('product');
 });

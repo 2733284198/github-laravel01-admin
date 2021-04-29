@@ -47,3 +47,8 @@ Table::init(function (Table $table) {
         $actions->disableDelete();
     });
 });*/
+
+\Encore\Admin\Assets::define('vuejs', [
+    'js'     => ['https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js',],
+    'export' => 'Vue',
+]);

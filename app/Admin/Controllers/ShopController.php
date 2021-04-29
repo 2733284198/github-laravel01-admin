@@ -81,6 +81,8 @@ class ShopController extends AdminController
 //            ->creationRules(['required', "unique:users"]); // 唯一
 
         $form->text('desc', __('desc'))->rules('required|min:3');
+        $form->datetime('created_at', __('created_at') );
+
 //        $form->text('created_at', __('created_at'))->rules('required|min:3');
 
         return $form;

@@ -19,6 +19,40 @@ use Encore\Admin\Widgets\InfoBox;
 //class ProductController extends Controller
 class ProductController extends AdminController
 {
+    public function index(Content $content)
+    {
+        return $content
+            ->title('Dashboard')
+            ->description('介绍')
+            ->view('admin.chart.chart1', ['title' => '标题..']);
+    }
+
+    public function chart2(Content $content)
+    {
+//        $gender = DB::table('news') ->select('count','gender')
+        $gender = DB::table('news') ->select('gender')
+            ->get();
+//        pd($gender);
+
+//        $doughnut = view('admin.chart.test', compact('gender'));
+//            return new Box('性别比例', $doughnut);
+
+        return $content
+            ->title('Dashboard')
+            ->description('图标1')
+//            ->view('admin.chart.chart1', ['title' => '标题..']);
+            ->view('admin.chart.test', compact('gender'));
+    }
+
+    public function vue1(Content $content)
+    {
+        $options = ['value' => 50, 'max' => 100, 'min' => 5, 'step' => 2];
+
+        return $content
+            ->title('Vue number')
+            ->description('介绍..')
+            ->view('admin.vue.input', compact('options'));
+    }
 
     /*public function index(Content $content)
     {
