@@ -125,6 +125,17 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/andreaselia/laravel-api-to-postman" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/haruncpi/laravel-log-reader" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/chartjs" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/api-tester" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nunomaduro/larastan" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/enlightn/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/enlightn/enlightn" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/seld/phar-utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

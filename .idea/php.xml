@@ -120,6 +120,17 @@
       <path value="$PROJECT_DIR$/vendor/andreaselia/laravel-api-to-postman" />
       <path value="$PROJECT_DIR$/vendor/haruncpi/laravel-log-reader" />
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/chartjs" />
+      <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/api-tester" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/larastan" />
+      <path value="$PROJECT_DIR$/vendor/enlightn/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/enlightn/enlightn" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">
